@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Gestion des risques</title>
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link rel="stylesheet" type="text/css" href="css/1.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+
+        <div class="wrapper">
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs--items">
+                    <a href="accueil.html" class="breadcrumbs--link">Accueil</a>
+                </li>
+                <li class="breadcrumbs--items" style="margin-bottom: 30px;">
+                    <a href="identification.html" class="breadcrumbs--link breadcrumbs--link--active">Identification</a>
+                </li>
+            </ul>
+            <div class="form">
+
+                <div class="inputfield">
+                    <label>Macro processus</label>
+                    <div class="custom_select">
+                    <select>
+                        <option >MProcessu1</option>
+                        <option >MProcessus2</option>
+                        <option >MProcessus3</option>
+                        <option >MProcessus4</option>
+                    </select>
+                    </div>
+                </div>  
+                <div class="inputfield">
+                    <label>Code processus</label>
+                    <div class="custom_select" style="margin-right: 30px;">
+                    <select id="codeProcessus">
+                        <option >M1.1</option>
+                        <option>M1.2</option>
+                        <option >M1.3</option>
+                        <option >M1.4</option>
+                    </select>
+                    </div>
+                    <label>Processus</label>
+                    <div class="custom_select">
+                    <select id="processus">
+                        <option >Processus1</option>
+                        <option >Processus2</option>
+                        <option >Processu3</option>
+                    </select>
+                    </div>
+                </div> 
+
+                <div class="inputfield">
+                    <label>Sponsor macro processus</label>
+                    <input type="text" class="input" style="margin-right: 30px;">
+                    <label>Pilote processus</label>
+                    <input type="text" class="input" id="pilote">
+                </div>
+                <hr style="margin-bottom: 30px;">
+
+                <div class="inputfield">
+                <label>Propriétaire risque</label>
+                <input type="text" class="input" id="owner">
+                </div>  
+                <div class="inputfield">
+                    <label>Code risque</label>
+                    <input type="text" class="input" style="margin-right: 30px;" id="codeRisk">
+                    <label>Risque</label>
+                    <input type="text" class="input" id="risk"> 
+                </div>  
+
+                    <form >
+                        <label>Causes</label>
+                        <input type="text" name="text" class="input" id="txt">
+                        <button type="submit" class="btn-list">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </button>
+                    </form>
+
+                        <div class="container" id="list1">
+                            <ul id="causeList">
+    
+                            </ul>
+                        </div>
+
+                    <form >
+                        <label>Conséquences</label>
+                        <input type="text" class="input" id="txte" >
+                        <button type="submit" class="btn-liste" id="push">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                    <div class="containerr" id="list2" >
+                        <ul id="consequenceList">
+
+                        </ul>
+                    </div>
+                    <div id="dialogoverlay"></div>
+                    <div id="dialogbox">
+                      <div>
+                        <div id="dialogboxhead"></div>
+                        <div id="dialogboxbody"></div>
+                        <div id="dialogboxfoot"></div>
+                      </div>
+                    </div>
+                <div class="inputfield">
+                    <input type="submit"  value="Risque suivant" class="btn" style="margin-right: 30px;" id="nextRisk">
+                    <a href="analyse.html">
+                         <input type="submit" value="Analyser" class="btn" href="analyse.html" style="margin-right: 30px;" id="analyser">
+                    </a>
+                    <input type="submit" value="Annuler" class="btn" onclick="Confirm.render('&ecirctes-vous s&ucircr d\'annuler l\'action ?','delete_post','post_1')" id="annuler">
+                </div>
+                
+            </div>
+        </div>	
+        <script type="text/javascript" src="js/identification.js"></script>
+        <script type="text/javascript" src="js/1.js"></script>
+
+
+    </body>
+</html>

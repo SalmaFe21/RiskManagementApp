@@ -1,0 +1,54 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+}
+body{
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	background: rgb(235, 225, 225) ;
+	padding: 0 20px;
+}
+.wrapper{
+	max-width: 1000px;
+	width: 100%;
+	background: rgb(235, 225, 225);
+	margin: 50px auto;
+	box-shadow: -5px -4px 3px 0px rgba(255,255,255,0.425), 5px 4px 3px 0px rgba(88,88,88,0.425);
+	padding: 50px;
+}
+.wrapper .form{
+	width: 100%;
+}
+form{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+
+#dialogoverlay{
+	display: none;
+	opacity: .8;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: #FFF;
+	width: 100%;
+	z-index: 10;
+}
+#dialogbox{
+	display: none;
+	position: fixed;
+	background: rgb(231, 221, 221);
+	border-radius:10px; 
+	width:550px;
+	z-index: 10;
+}
+#dialogbox > div{ background:#FFF; margin:8px; }
+#dialogbox > div > #dialogboxhead{ background: rgb(235, 225, 225); font-size:19px; padding:10px; color:#333; }
+#dialogbox > div > #dialogboxbody{ background: #333; padding:20px; color:#FFF; }
+#dialogbox > div > #dialogboxfoot{ background: #333; padding:10px; text-align:right; }
+

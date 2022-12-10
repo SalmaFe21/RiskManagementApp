@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Gestion des risques</title>
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link rel="stylesheet" type="text/css" href="css/1.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+       
+        <div class="wrapper">
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs--items">
+                    <a href="accueil.html" class="breadcrumbs--link">Accueil</a>
+                </li>
+                <li class="breadcrumbs--items">
+                    <a href="identification.html" class="breadcrumbs--link">Identification</a>
+                </li>
+                <li class="breadcrumbs--items" style="margin-bottom: 30px;">
+                    <a href="analyse.html" class="breadcrumbs--link  breadcrumbs--link--active">Analyse</a>
+                </li>
+            </ul>
+            <div class="form">
+                <div class="inputfield">
+                    <label>Code processus</label>
+                    <input type="text" class="input"  style="margin-right: 30px;" id="codeProcessus">
+                    <label>Processus</label>
+                    <div class="custom_select">
+                        <select id="processus" >
+                            <option >Processus1</option>
+                            <option >Processus2</option>
+                            <option >Processu3</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="inputfield">
+                    <label>Code risque</label>
+                    <input type="text"  class="input" style="margin-right: 30px;" id="codeRisk">
+                    <label>Risque</label>
+                    <input type="text"  class="input" id="risk"> 
+                </div>
+                <div class="inputfield">
+                    <label>Fr&eacutequence</label>
+                    <div class="custom_select" >
+                        <select id="frequency">
+                            <option value=""disabled selected></option>
+                            <option style="background-color: green;">1</option>
+                            <option style="background-color: rgb(47, 145, 47);">2</option>
+                            <option style="background-color: yellow;">3</option>
+                            <option style="background-color: orange ;">4</option>
+                            <option style="background-color: red;">5</option>
+                        </select>
+                    </div> 
+                </div>
+                <label>Impact</label>
+
+                <div class="inputfield">
+                    <label>Image</label>
+                    <div class="custom_select" style="margin-right: 30px;" >
+                        <select id="image">
+                            <option value=""disabled selected></option>
+                            <option style="background-color: green;">1</option>
+                            <option style="background-color: rgb(47, 145, 47);">2</option>
+                            <option style="background-color: yellow;">3</option>
+                            <option style="background-color: orange ;">4</option>
+                            <option style="background-color: red;">5</option>
+                        </select>
+                    </div> 
+                    <label>L&eacutegale</label>
+                    <div class="custom_select" style="margin-right: 30px;" >
+                        <select id="legal">
+                            <option value=""disabled selected></option>
+                            <option style="background-color: green;">1</option>
+                            <option style="background-color: rgb(47, 145, 47);">2</option>
+                            <option style="background-color: yellow;">3</option>
+                            <option style="background-color: orange ;">4</option>
+                            <option style="background-color: red;">5</option>
+                        </select>
+                    </div> 
+
+                    <label>Performance</label>
+                    <div class="custom_select" style="margin-right: 30px;" >
+                        <select id="performance">
+                            <option value=""disabled selected></option>
+                            <option style="background-color: green;">1</option>
+                            <option style="background-color: rgb(47, 145, 47);">2</option>
+                            <option style="background-color: yellow;">3</option>
+                            <option style="background-color: orange ;">4</option>
+                            <option style="background-color: red;">5</option>
+                        </select>
+                    </div> 
+
+                    <label>Financier</label>
+                    <div class="custom_select" >
+                        <select id="financial">
+                            <option value=""disabled selected></option>
+                            <option style="background-color: green;">1</option>
+                            <option style="background-color: rgb(47, 145, 47);">2</option>
+                            <option style="background-color: yellow;">3</option>
+                            <option style="background-color: orange ;">4</option>
+                            <option style="background-color: red;">5</option>
+                        </select>
+                    </div> 
+                </div>
+                <div class="inputfield">
+                    <label>Risque brut</label>
+                    <div class="custom_select">
+                        <select>
+                            <option style="background-color: green;">1</option>
+                            <option style="background-color: rgb(47, 145, 47);">2</option>
+                            <option style="background-color: yellow;">3</option>
+                            <option style="background-color: orange ;">4</option>
+                            <option style="background-color: red;">5</option>
+                        </select>
+                    </div> 
+                </div>
+                <hr style="margin-bottom: 30px;">
+
+
+                <form >
+                    <label>Action de maitrise</label>
+                    <input type="text" name="text" class="input" id="txt">
+                    <button type="submit" class="btn-list" style="margin-right: 30px;">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                    </button>
+                </form>
+                <div class="container" >
+                    <ul id="actionList">
+
+                    </ul>
+                </div>
+                <form >
+                    <label>Efficacit&eacute action de maitrise</label>
+                    <input type="text" class="input" id="txte" >
+                    <button type="submit" class="btn-liste" id="push">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                    </button>
+                </form>
+                <div class="containerr" >
+                    <ul id="effeciencyList">
+
+                    </ul>
+                </div>
+
+                <div class="inputfield">
+                    <label>Risque net</label>
+                    <input type="text" class="input" style="margin-right: 30px;">
+                    <label>Qualification risque</label>
+                    <input type="text" class="input">
+                </div>
+                <div class="inputfield">
+                    <label>Formule KRI</label>
+                    <input type="text" class="input" style="margin-right: 30px;" id="kriFormula">
+                    <label>KRI</label>
+                    <input type="text" class="input">
+                </div>
+                <div id="dialogoverlay"></div>
+                <div id="dialogbox">
+                  <div>
+                    <div id="dialogboxhead"></div>
+                    <div id="dialogboxbody"></div>
+                    <div id="dialogboxfoot"></div>
+                  </div>
+                </div>
+                <div class="inputfield">
+                    <input type="submit" value="Risque suivant" class="btn" style="margin-right: 30px;" id="nextRisk">
+                    <a href="traitement.html">
+                        <input type="submit" value="Traitement" class="btn" href='traitement.html'style="margin-right: 30px;">
+                   </a>
+                    
+                    <input type="submit" value="Annuler" class="btn" onclick="Confirm.render('&ecirctes-vous s&ucircr d\'annuler l\'action ?','delete_post','post_1')">
+                </div>
+                
+            </div>
+        </div>	
+        <script type="text/javascript" src="js/analyse.js"></script>
+        <script type="text/javascript" src="js/1.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Gestion des risques</title>
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link rel="stylesheet" type="text/css" href="css/2.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+       
+        <div class="wrapper">
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs--items">
+                    <a href="accueil.html" class="breadcrumbs--link">Accueil</a>
+                </li>
+                <li class="breadcrumbs--items">
+                    <a href="identification.html" class="breadcrumbs--link">Identification</a>
+                </li>
+                <li class="breadcrumbs--items">
+                    <a href="analyse.html" class="breadcrumbs--link">Analyse</a>
+                </li>
+                <li class="breadcrumbs--items" style="margin-bottom: 30px;">
+                    <a href="traitement.html" class="breadcrumbs--link  breadcrumbs--link--active">Traitement</a>
+                </li>
+            </ul>
+            <div class="form">
+                <div class="inputfield">
+                    <label>Code processus</label>
+                    <input type="text" class="input" style="margin-right: 30px;">
+                    <label>Processus</label>
+                    <div class="custom_select">
+                        <select>
+                            <option >Processus1</option>
+                            <option >Processus2</option>
+                            <option >Processu3</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="inputfield">
+                    <label>Code risque</label>
+                    <input type="text" class="input" style="margin-right: 30px;">
+                    <label>Risque</label>
+                    <input type="text" class="input"> 
+                </div>
+                
+                <form >
+                    <label>Code action</label>
+                    <input type="text" class="input" style="margin-right: 30px;" id="codeAction">
+                    <label>Action à mettre en place</label>
+                    <input type="text" name="text" class="input" id="txt">
+                </form>
+
+                <div class="inputfield">
+                    <label>Stratégie de traitement</label>
+                    <input type="text" class="input" style="margin-right: 30px;" id="strategy">
+                    <label>Coût action</label>
+                    <input type="text" class="input" id="cost"> <label>DH</label >
+                </div>
+                <div class="inputfield">
+                    <label>Date de lancement</label>
+                    <input type="date" class="input" style="margin-right: 30px;" id="dateLancement">
+                    <label>Délais</label>
+                    <input type="text" class="input" id="delay"> <label>Mois</label>
+                </div>
+
+                <div class="inputfield">
+                    <label>Avancement</label>
+                    <input type="text" class="input" id="avancemnet"> <label style="margin-right: 30px;">%</label>
+                    <label>Responsable action</label>
+                    <input type="text" class="input" id="actionResponsible"> 
+                </div>
+                <div class="inputfield">
+                    <label>Commentaire</label>
+                    <textarea type="text" class="input" rows="5" cols="33" id="comment">
+                    </textarea>
+                </div>
+                <div id="dialogoverlaye"></div>
+                <div id="dialogboxe">
+                  <div>
+                    <div id="dialogboxheade"></div>
+                    <div id="dialogboxbodye"></div>
+                    <div id="dialogboxfoote"></div>
+                  </div>
+                </div>
+                <div class="inputfield">
+                    <input type="submit" value="Risque suivant" class="btn" style="margin-right: 30px;" id="nextRisk">
+                    <a href="suivi.html">
+                         <input type="submit" value="Valider" class="btn" href=suivi.html style="margin-right: 30px;">
+                    </a>  
+                    <input type="submit" value="Annuler" class="btn" onclick="Confirm.render('&ecirctes-vous s&ucircr d\'annuler l\'action ?','delete__post','post_1')">
+                </div>
+                
+            </div>
+        </div>	
+        <script type="text/javascript" src="js/traitemnet.js"></script>
+        <script type="text/javascript" src="js/2.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gestion des risques</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+
+            body{
+                font-family: 'Poppins', sans-serif;
+                overflow: hidden;
+            }
+            .container{
+                width: 100vw;
+                height: 100vh;
+                display: block;
+                padding: 0 2rem;
+                overflow: hidden}
+            .tab{float: left;}
+            .tab-2{ text-align: center;width: 100%;margin: 0;}
+            .tab-2 input{display: block;text-align: center;margin: auto;}
+            tr{transition:all .25s ease-in-out}
+            tr:hover{background-color:#EEE;cursor: pointer}
+
+            .tab.tab-1{
+                text-align: center;
+                margin: 0;
+                width: 100%
+            }
+            
+            .tab-2 button{
+                width: 8%;
+                height: 50px;
+                border-radius: 25px;
+                outline: none;
+                border: none;
+                background-image: linear-gradient(to right, orangered, orangered, orangered);
+                background-size: 200%;
+                font-size: 1rem;
+                color: #fff;
+                font-family: 'Poppins', sans-serif;
+                text-transform: uppercase;
+                margin: 1rem 0;
+                cursor: pointer;
+                transition: all 2.5s;
+            }
+            .tab-2 button:hover{
+                background-position: right;
+                background-image: linear-gradient(to right, #333, #333, #333);
+
+            }
+            table#table{
+                text-align: center;
+                margin: 0;
+                width: 100%
+            }
+            
+        </style>
+        
+    </head>
+    <body>
+        
+        <div class="container">
+            <div class="tab tab-2">
+                Nom :<input type="text" name="nname" id="nname">
+                Prénom :<input type="text" name="pname" id="pname">
+                Matricule :<input type="text" name="fname" id="fname">
+                Mot de passe :<input type="text" name="lname" id="lname">
+                
+                <button id="add" onclick="addHtmlTableRow();">Add</button>
+                <button id="edit" onclick="editHtmlTbleSelectedRow();">Edit</button>
+                <button id="remove" onclick="removeSelectedRow();">Remove</button>
+            </div>
+            <div class="tab tab-1">
+                <table id="table" border="1">
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Matricule</th>
+                        <th>Mot de passe</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                </table>
+            </div>
+
+        </div>
+        
+        <script>
+            const  saveUser =  async () => {
+                let userFName = document.getElementById("pname").value
+                let userLName = document.getElementById("nname").value
+                let  martricule = document.getElementById("fname").value
+                let password = document.getElementById("lname").value
+
+                let AllUsers = await fetch('http://localhost:8080/user/getAllUsers');
+
+                let response = await fetch('http://localhost:8080/user/addUser',{
+                    method : 'POST',
+                    headers : {
+                        'Accept' : 'application/json',
+                        'Content-Type' : 'application/json'
+                    },
+                    body : JSON.stringify({
+                        first_name : userFName,
+                        last_name : userLName,
+                        matricule : martricule,
+                        password : password
+                    })
+                })
+                console.log(response);
+                console.log(AllUsers);
+            }
+            add.addEventListener('click',saveUser);
+            
+            var rIndex,
+                table = document.getElementById("table");
+            
+            // check the empty input
+            function checkEmptyInput()
+            {
+                var isEmpty = false,
+                    nname = document.getElementById("nname").value,
+                    pname = document.getElementById("pname").value,
+                    fname = document.getElementById("fname").value,
+                    lname = document.getElementById("lname").value;
+            
+                if(fname === ""){
+                    alert("Matricule ne peut pas être vide");
+                    isEmpty = true;
+                }
+                else if(lname === ""){
+                    alert("Mot de passe ne peut pas être vide");
+                    isEmpty = true;
+                }
+                else if(nname === ""){
+                    alert("Nom peut pas être vide");
+                    isEmpty = true;
+                }
+                else if(pname === ""){
+                    alert("Prénom ne peut pas être vide");
+                    isEmpty = true;
+                }
+
+                return isEmpty;
+            }
+            
+            // add Row
+            function addHtmlTableRow()
+            {
+                // get the table by id
+                // create a new row and cells
+                // get value from input text
+                // set the values into row cell's
+                if(!checkEmptyInput()){
+                var newRow = table.insertRow(table.length),
+                    cell1 = newRow.insertCell(0),
+                    cell2 = newRow.insertCell(1),
+                    cell3 = newRow.insertCell(2),
+                    cell4 = newRow.insertCell(3),
+                    nname = document.getElementById("nname").value,
+                    pname = document.getElementById("pname").value,
+                    fname = document.getElementById("fname").value,
+                    lname = document.getElementById("lname").value;
+            
+                cell1.innerHTML = nname;
+                cell2.innerHTML = pname;
+                cell3.innerHTML = fname;
+                cell4.innerHTML = lname;
+
+                // call the function to set the event to the new row
+                selectedRowToInput();
+            }
+            }
+            
+            // display selected row data into input text
+            function selectedRowToInput()
+            {
+                
+                for(var i = 1; i < table.rows.length; i++)
+                {
+                    table.rows[i].onclick = function()
+                    {
+                      // get the seected row index
+                      rIndex = this.rowIndex;
+                      document.getElementById("nname").value = this.cells[0].innerHTML;
+                      document.getElementById("pname").value = this.cells[1].innerHTML;
+                      document.getElementById("fname").value = this.cells[2].innerHTML;
+                      document.getElementById("lname").value = this.cells[3].innerHTML;
+
+                    };
+                }
+            }
+            selectedRowToInput();
+            
+            function editHtmlTbleSelectedRow()
+            {
+                var nname = document.getElementById("nname").value,
+                    pname = document.getElementById("pname").value,
+                    fname = document.getElementById("fname").value,
+                    lname = document.getElementById("lname").value;
+               if(!checkEmptyInput()){
+                table.rows[rIndex].cells[0].innerHTML = nname;
+                table.rows[rIndex].cells[1].innerHTML = pname;
+                table.rows[rIndex].cells[2].innerHTML = fname;
+                table.rows[rIndex].cells[3].innerHTML = lname;
+
+              }
+            }
+            
+            function removeSelectedRow()
+            {
+                table.deleteRow(rIndex);
+                // clear input text
+                document.getElementById("fname").value = "";
+                document.getElementById("lname").value = "";
+                document.getElementById("nname").value = "";
+                document.getElementById("pname").value = "";
+            }
+        </script>
+        
+    </body>
+</html>
+

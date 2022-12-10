@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Gestion des risques</title>
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+       
+        <div class="wrapper">
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs--items">
+                    <a href="accueil.html" class="breadcrumbs--link">Accueil</a>
+                </li>
+                <li class="breadcrumbs--items">
+                    <a href="identification.html" class="breadcrumbs--link">Identification</a>
+                </li>
+                <li class="breadcrumbs--items">
+                    <a href="analyse.html" class="breadcrumbs--link">Analyse</a>
+                </li>
+                <li class="breadcrumbs--items">
+                    <a href="traitement.html" class="breadcrumbs--link">Traitement</a>
+                </li>
+                <li class="breadcrumbs--items" style="margin-bottom: 30px;">
+                    <a href="suivi.html" class="breadcrumbs--link  breadcrumbs--link--active">Suivi</a>
+                </li>
+            </ul>
+            <div class="form">
+                <div class="inputfield">
+                    <label>Code processus</label>
+                    <input type="text" class="input" style="margin-right: 30px;" id="codeProcessus">
+                    <label>Processus</label>
+                    <div class="custom_select">
+                        <select id="processus">
+                            <option >Processus1</option>
+                            <option >Processus2</option>
+                            <option >Processu3</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="inputfield">
+                    <label>Code risque</label>
+                    <input type="text" class="input" style="margin-right: 30px;" id="codeRisk">
+                    <label>Risque</label>
+                    <input type="text" class="input" id="risk"> 
+                </div>
+                
+            
+
+                <div class="inputfield">
+                    
+                    <input type="submit" value="Generer la fiche de suivi" class="btn" id="ficheSuivi">
+                    
+                </div>
+                
+            </div>
+        </div>	
+        <script type="text/javascript" src="js/suivi.js"></script>
+    </body>
+</html>
